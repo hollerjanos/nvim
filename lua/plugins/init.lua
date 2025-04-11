@@ -102,5 +102,41 @@ return {
         config = function()
             require('neoscroll').setup()
         end
+    },
+
+    -- Auto closing pairs
+    {
+        "windwp/nvim-autopairs",
+        config = function()
+            require('nvim-autopairs').setup{}
+        end
+    },
+
+    -- Nice, noise, notice
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
+    },
+
+    -- Neovim Keymap Reminder
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "echasnovski/mini.icons"
+        },
+        opts = {
+            preset = "helix",
+            win = {
+                title = false
+            }
+        }
     }
 }
