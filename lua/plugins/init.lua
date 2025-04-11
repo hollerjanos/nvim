@@ -4,6 +4,12 @@ return {
         "ellisonleao/gruvbox.nvim",
         priority = 1000,
         config = function()
+            require("gruvbox").setup({
+                italic = {
+                    strings = false,
+                    comments = false
+                }
+            })
             vim.cmd("colorscheme gruvbox")
         end
     },
@@ -35,8 +41,12 @@ return {
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup {
+                ensure_installed = {
+                    "vimdoc",
+                    "lua"
+                },
                 highlight = { enable = true },
-                indent = { enable = true },
+                indent = { enable = true }
             }
         end
     },
