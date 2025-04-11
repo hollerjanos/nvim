@@ -7,10 +7,21 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.cursorline = true
-vim.opt.colorcolumn = "80"
 
 vim.opt.wrap = false
 
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 5
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+    callback = function()
+        vim.opt.colorcolumn = { "50", "80" }
+    end
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+    callback = function()
+        vim.opt.colorcolumn = ""
+    end
+})
